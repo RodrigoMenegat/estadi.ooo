@@ -44,6 +44,12 @@
 	font-family: Roboto;
 }
 
+
+.text-container {
+	display:  flex;
+	flex-direction: column-reverse;
+}
+
 .page-title, .subtitle {
 	text-align: left;
 }

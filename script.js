@@ -29,10 +29,6 @@ function startGame() {
 		// Select todays information
 		let todayStadium = answerStadiums.filter(d => d.dia == today)[0]
 
-		if (todayStadium.length) {
-
-		}
-
 		// Set the correct answer
 		const correctAnswer = todayStadium.nome;
 
@@ -72,6 +68,7 @@ function startGame() {
 		// Adding event listener
 		input.addEventListener("awesomplete-select", function(event) {
 			handleAnswer(event.text, correctAnswer, gameStatus);
+			input.value = "";
 		});
 
 		update(gameStatus, chances, hints);
