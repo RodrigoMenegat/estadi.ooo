@@ -54,7 +54,8 @@ function startGame() {
 		let input = document.querySelector(".answer-box");
 		new Awesomplete(input, {
 			list: nameList,
-			maxItems: 3
+			maxItems: 3,
+			minChars: 1
 		});
 
 		// Adds information at the overlay
@@ -115,6 +116,9 @@ function startGame() {
 
 				overlay.classList.remove("gameon");
 				overlay.classList.add("gameover");
+
+				let gameArea = docume.querySelector(".iconContainer");
+				gameArea.classList.add("hidden");
 			}
 
 			else {
@@ -127,8 +131,8 @@ function startGame() {
 				// Add missed hints
 	 			for (const index of [...Array(gameStatus.hintsTaken).keys()]) {
 
-					hints[index].classList.remove('hidden');
-					hints[index].classList.add('visible');
+					hints[index].classList.remove('concealed');
+					hints[index].classList.add('revealed');
 				}
 
 				// Updates the share string

@@ -39,7 +39,7 @@
 
 .container {
 	margin:  0 auto;
-	max-width: 500px;
+	max-width: 350px;
 	font-family: Roboto;
 }
 
@@ -64,11 +64,14 @@
 
 .image-holder {
 	max-width: 100%;
+	text-align: left;
 	height: auto;
 } 
 
 .stadium-image {
-	width: 100%;
+	max-width: 350px;
+	min-width: 250px;
+	min-height: 250px;
 }
 
 .icon-container {
@@ -102,26 +105,51 @@
 	margin: 0;
 }
 
-.not-revealed {
-	color:grey;
-	filter: grayscale(100%);
+.revaled {
+	display: block;
+}
+
+.concealed {
+	display: none;
 }
 
 /* Overrides awesomplete CSS */
 .awesomplete > ul {
   position: absolute;
   margin: 0;
-  background-color: red;
+  background-color: #fff;
+  opacity: 95%;
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
   margin-top: 10px;
+}
+
+.awesomplete>ul {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.awesomplete>ul>li {
+	padding: 5px;
+}
+
+.awesomplete>ul>li[aria-selected=true]>mark {
+  background-color: #d5e1e7;
+}
+
+.awesomplete>ul>li[aria-selected=true],
+.awesomplete>ul>li:hover {
+  background-color: #d5e1e7;
+  color: black;
+}
+
+.awesomplete>ul>li[aria-selected=true]>mark,
+.awesomplete>ul>li:hover>mark {
+  background-color: #3f89af;
 }
 
 
 .visually-hidden {
 	display: none;
-}
-
-/* Swiper CSS */
-.swiper {
-  width: 450px;
-  height: 300px;
 }
