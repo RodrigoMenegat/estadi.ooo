@@ -86,6 +86,8 @@ function startGame() {
 			}
 
 			update(gameStatus, chances, hints);
+
+			console.log(gameStatus);
 		}
 
 
@@ -133,7 +135,7 @@ function startGame() {
 				gameStatus.string = '❌'.repeat(gameStatus.chancesTaken) + '⚽'.repeat(gameStatus.chancesLeft);
 
 				let score = document.querySelector(".score");
-				score = gameStatus.string;
+				score.textContent = gameStatus.string;
 
 			}
 
