@@ -1,6 +1,7 @@
 #overlay {
 	height: 100%;
 	width: 100%;
+	max-width: 350px;
 	background-color: #fff;
 	position: fixed;
 	z-index:  9999;

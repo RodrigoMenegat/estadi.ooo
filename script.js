@@ -29,6 +29,10 @@ function startGame() {
 		// Select todays information
 		let todayStadium = answerStadiums.filter(d => d.dia == today)[0]
 
+		if (todayStadium.length) {
+
+		}
+
 		// Set the correct answer
 		const correctAnswer = todayStadium.nome;
 
@@ -102,6 +106,7 @@ function startGame() {
 			gameStatus.chancesLeft -= 1;
 			gameStatus.chancesTaken += 1;
 			gameStatus.hintsTaken += 1;
+			gameStatus.hintsLeft -= 1;
 
 			if (gameStatus.chancesLeft <= 0) {
 				gameStatus.gameover = true;
@@ -111,35 +116,36 @@ function startGame() {
 
 		function update(gameStatus, chances, hints) {
 
+
+			// Add missed chances
+ 			for (const index of [...Array(gameStatus.chancesTaken).keys()]) {
+ 				chances[index].innerText = '❌';
+ 			}
+
+			// Reveal hint
+
+			if (gameStatus.hintsLeft > 0) {
+				for (const index of [...Array(gameStatus.hintsTaken).keys()]) {
+					hints[index].classList.remove('concealed');
+					hints[index].classList.add('revealed');
+				}
+			}
+
+			// Updates the share string
+			gameStatus.string = '❌'.repeat(gameStatus.chancesTaken) + '⚽'.repeat(gameStatus.chancesLeft);
+
+			let score = document.querySelector(".score");
+			score.textContent = gameStatus.string;
+
+
 			if (gameStatus.gameover) {
 				let overlay = document.querySelector("#overlay");
 
 				overlay.classList.remove("gameon");
 				overlay.classList.add("gameover");
 
-				let gameArea = docume.querySelector(".iconContainer");
+				let gameArea = document.querySelector(".icon-container");
 				gameArea.classList.add("hidden");
-			}
-
-			else {
-
-				// Add missed chances
-	 			for (const index of [...Array(gameStatus.chancesTaken).keys()]) {
-	 				chances[index].innerText = '❌';
-	 			}
-
-				// Add missed hints
-	 			for (const index of [...Array(gameStatus.hintsTaken).keys()]) {
-
-					hints[index].classList.remove('concealed');
-					hints[index].classList.add('revealed');
-				}
-
-				// Updates the share string
-				gameStatus.string = '❌'.repeat(gameStatus.chancesTaken) + '⚽'.repeat(gameStatus.chancesLeft);
-
-				let score = document.querySelector(".score");
-				score.textContent = gameStatus.string;
 
 			}
 
