@@ -1,0 +1,78 @@
+<head>
+		<title>estadi.ooo – temporada 1</title>
+		<meta name="description" content="Adivinhe o estádio a partir das imagens de satélite. Temporada 1: estádios brasileiros">
+		<meta charset="utf-8">
+		<meta name="google" content="notranslate">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
+		<script src="dependencies/awesomplete.js"></script>
+		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+<body>
+
+	<div class='container'>
+
+		<div class="header">
+			<h1 class="page-title">estadi.ooo</h1>
+			<h2 class="subtitle">temporada 1: estádios do Brasil</h2>
+		</div>
+
+		<div class="image-holder">
+			<img src="img/placeholder.jpg" class="stadium-image">
+		</div>
+
+		<div class="interaction-container">
+
+			<div id="overlay" class="gameon">
+				<div class="answer">
+					<p class="answer-text stadium-name">Estádio de Exemplo ✅</p>
+					<p class="answer-text location">Cidade, XX</p>
+				</div>
+
+				<div class="share">
+					<p class="explainer">compartilhe</p>
+					<div class="share-box">
+						<p class="share-string">já joguei estadi.ooo hoje, e tu? conseque acertar a cancha?<br></p>
+						<p class="score">⚽⚽⚽⚽⚽</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="icon-container">
+
+				<div class="guess-container">
+					<p class="explainer">que estádio é esse?</p>
+					<input class="answer-box awesomplete">
+				</div>
+
+				<div class="tries-container">
+					<p class="explainer">chances</p>
+					<p class="tries">
+						<span class="try visible">⚽</span>
+						<span class="try visible">⚽</span>
+						<span class="try visible">⚽</span>
+						<span class="try visible">⚽</span>
+						<span class="try visible">⚽</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="text-container">
+				<p class="explainer">dicas</p>
+			    <p class="hint visible">Slide 1</p>
+			    <p class="hint hidden">Slide 2</p>
+			    <p class="hint hidden">Slide 3</p>
+			   	<p class="hint hidden">Slide 4</p>
+			   	<p class="hint hidden">Slide 5</p>
+			</div>
+
+		</div>
+
+	</div>
+</body>
