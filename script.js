@@ -66,10 +66,56 @@ function startGame() {
 		stadiumLocation.textContent = todayStadium.cidade + ", " + todayStadium.estado;
 
 		// Adding event listener
-		input.addEventListener("awesomplete-select", function(event) {
+		input.addEventListener("awesomplete-selectcomplete", function(event) {
 			handleAnswer(event.text, correctAnswer, gameStatus);
-			input.value = "";
+			event.target.value = "";
 		});
+
+		// Addinv event listener on helper
+		let helpButton = document.querySelector(".how");
+		helpButton.addEventListener("click", function(event) {
+
+			let helpOverlay = document.querySelector(".helper")
+
+			if (helpOverlay.classList.contains("help-inactive")) {
+				helpOverlay.classList.remove("help-inactive");
+				helpOverlay.classList.add("help-active");
+			}
+
+			else if (helpOverlay.classList.contains("help-active")) {
+				helpOverlay.classList.remove("help-active");
+				helpOverlay.classList.add("help-inactive");
+
+			}
+
+			let helpButton = document.querySelector(".how");
+
+			if (helpButton.classList.contains("help-inactive")) {
+				helpButton.classList.remove("help-inactive");
+				helpButton.classList.add("help-active");
+			}
+
+			else if (helpButton.classList.contains("help-active")) {
+				helpButton.classList.remove("help-active");
+				helpButton.classList.add("help-inactive");
+
+			}
+
+			let title = document.querySelector(".title-container");
+
+			if (title.classList.contains("help-inactive")) {
+				title.classList.remove("help-inactive");
+				title.classList.add("help-active");
+			}
+
+			else if (title.classList.contains("help-active")) {
+				title.classList.remove("help-active");
+				title.classList.add("help-inactive");
+
+			}
+
+		});
+
 
 		update(gameStatus, chances, hints);
 
@@ -121,7 +167,7 @@ function startGame() {
 
 			// Reveal hint
 
-			if (gameStatus.hintsLeft > 0) {
+			if (gameStatus.hintsLeft >= 0) {
 				for (const index of [...Array(gameStatus.hintsTaken).keys()]) {
 					hints[index].classList.remove('concealed');
 					hints[index].classList.add('revealed');

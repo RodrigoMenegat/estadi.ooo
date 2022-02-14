@@ -1,3 +1,56 @@
+/* When help is active/inactive */
+
+.helper {
+	height: 100%;
+	width: 100%;
+	font-weight: lighter;
+	position: fixed;
+	z-index: 9999;
+	background-color: #fff;
+	max-width: 350px;
+}
+
+
+.title-container.help-active {
+	visibility: hidden;
+}
+
+.title-container.help-inactive {
+	visibility: visible;
+}
+
+.helper.help-inactive {
+	display: none;	
+}
+
+.button-container {
+	display:  flex;
+	margin-left: auto;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.how {
+	height: 25px;
+	justify-content: flex-end;
+	background-color: #fff;
+	border-color: #000;
+	border-style: solid;
+	border-width: 1px;
+  cursor:pointer;
+}
+
+.how.help-inactive:after {
+	content: '?';
+}
+
+.how.help-active:after {
+	content: 'x';
+}
+
+
+/* When the game is over */
+
 #overlay {
 	height: 100%;
 	width: 100%;
@@ -14,6 +67,15 @@
 .gameon {
 	display: none;
 }
+
+/* Basic structure */
+
+
+.header { 
+	display: flex;
+	gap: 60px;
+}
+
 
 .answer-text {
 	font-size: 18px;
