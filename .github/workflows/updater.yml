@@ -14,15 +14,11 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 
-      - uses: BSFishy/pip-action@v1
-        with:
-          packages: |
-            requests
-            pandas
+          python-version: 3.8
+      - name: pip install
+          run: pip install -r requirements.txt
       - name: execute py script
-        run: |
-          python ./update.py
+        run: python ./update.py
       - name: Commit files
         run: |
           git config --local user.email "rodrigoschuinski@gmail.com"

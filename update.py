@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 import shutil
-from unidecode import unidecode
 
 SEASON = "season_1"
 
