@@ -26,6 +26,6 @@ jobs:
         run: |
           git config --local user.email "rodrigoschuinski@gmail.com"
           git config --local user.name "RodrigoMenegat"
-          git add csv img
+          git add csv img last-updated.txt
           git commit -m "Automatic update"
           git push

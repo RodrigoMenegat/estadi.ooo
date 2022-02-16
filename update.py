@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import shutil
+import datetime
 
 SEASON = "season_1"
 
@@ -18,6 +19,17 @@ DST = {
 	}
 }
 
+
+def timestamp():
+	'''
+	Creates a timestamp with
+	the time of the last update.
+	'''
+
+	now = datetime.datetime.now()
+	now = now.strftime("%Y%m%d_%H-%M-%S")
+	with open("last-updated.txt", "w+") as f:
+		f.write(now)
 
 
 def read_csv(src):
@@ -76,6 +88,8 @@ def main():
 	answer_options.to_csv(DST[SEASON]['answer_options'] ,index=False)
 
 	download_imgs()
+
+	timestamp()
 
 if __name__ == "__main__":
 	main()
