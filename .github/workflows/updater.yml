@@ -22,7 +22,7 @@ jobs:
             pandas
       - name: execute py script
         run: |
-          python update.py
+          python ../../update.py
       - name: Commit files
         run: |
           git config --local user.email "rodrigoschuinski@gmail.com"
