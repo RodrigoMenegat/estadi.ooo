@@ -43,6 +43,13 @@
 	content: 'x';
 }
 
+.interaction-container.help-inactive {
+	display: block;
+}
+
+.interaction-container.help-active {
+	display: none;
+}
 
 /* When the game is over */
 

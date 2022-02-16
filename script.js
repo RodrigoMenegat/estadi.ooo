@@ -127,6 +127,18 @@ function startGame() {
 
 			}
 
+			let interactionContainer = document.querySelector(".interaction-container");
+
+			if (interactionContainer.classList.contains("help-inactive")) {
+				interactionContainer.classList.remove("help-inactive");
+				interactionContainer.classList.add("help-active");
+			}
+
+			else if (interactionContainer.classList.contains("help-active")) {
+				interactionContainer.classList.remove("help-active");
+				interactionContainer.classList.add("help-inactive");
+			}
+
 		});
 
 
@@ -207,6 +219,8 @@ function startGame() {
 				let hintArea = document.querySelector(".hint-container");
 				hintArea.classList.remove("gameon");
 				hintArea.classList.add("gameover");
+
+
 
 				let copyButton = document.querySelector(".copyme-btn");
 				let text = document.querySelector(".copyme").textContent;
