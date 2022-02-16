@@ -1,0 +1,27 @@
+name: updater
+
+on:
+  schedule:
+    - cron: "*/2 * * * *" #runs every 2 minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 
+      - name: execute py script
+        run: |
+          python update.py
+      - name: Commit files
+        run: |
+          git config --local user.email "rodrigo@meneg.at"
+          git config --local user.name "RodrigoMenegat"
+          git add csv img
+          git commit -m "Manual update"
+          git push
