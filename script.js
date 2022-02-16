@@ -37,6 +37,8 @@ function startGame() {
 		let image = document.querySelector(".stadium-image");
 		image.src = "img/" + todayStadium.arquivo;
 
+		console.log(todayStadium);
+
 		// Select the chances
 		let chances = document.querySelectorAll(".try");
 		console.log(chances);
@@ -98,19 +100,6 @@ function startGame() {
 			else if (helpButton.classList.contains("help-active")) {
 				helpButton.classList.remove("help-active");
 				helpButton.classList.add("help-inactive");
-
-			}
-
-			let title = document.querySelector(".title-container");
-
-			if (title.classList.contains("help-inactive")) {
-				title.classList.remove("help-inactive");
-				title.classList.add("help-active");
-			}
-
-			else if (title.classList.contains("help-active")) {
-				title.classList.remove("help-active");
-				title.classList.add("help-inactive");
 
 			}
 
@@ -188,7 +177,12 @@ function startGame() {
 				overlay.classList.add("gameover");
 
 				let gameArea = document.querySelector(".icon-container");
-				gameArea.classList.add("hidden");
+				gameArea.classList.remove("gameon");
+				gameArea.classList.add("gameover");
+
+				let hintArea = document.querySelector(".hint-container");
+				hintArea.classList.remove("gameon");
+				hintArea.classList.add("gameover");
 
 			}
 

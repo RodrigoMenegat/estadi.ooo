@@ -10,15 +10,6 @@
 	max-width: 350px;
 }
 
-
-.title-container.help-active {
-	visibility: hidden;
-}
-
-.title-container.help-inactive {
-	visibility: visible;
-}
-
 .helper.help-inactive {
 	display: none;	
 }
@@ -60,12 +51,20 @@
 	z-index:  9999;
 }
 
-.gameover { 
+#overlay.gameover { 
 	display: block;
 }
 
-.gameon {
+#overlay.gameon {
 	display: none;
+}
+
+.icon-container.gameover {
+	display: none;
+}
+
+.hint-container.gameover {
+	display:  none;
 }
 
 /* Basic structure */
@@ -183,6 +182,11 @@
 }
 
 /* Overrides awesomplete CSS */
+.awesomplete {
+	font-size: 16px;
+}
+
+
 .awesomplete > ul {
   position: absolute;
   margin: 0;
