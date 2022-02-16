@@ -2,7 +2,7 @@ name: updater
 
 on:
   schedule:
-    - cron: "*/5 * * * *" #runs every 2 minutes
+    - cron: "*/5 * * * *" #runs every 5 minutes
 
 jobs:
   build:
