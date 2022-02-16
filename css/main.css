@@ -95,6 +95,7 @@
 	font-family: monospace;
 	font-size: 16px;
 	margin: 0;
+	margin-top: 15px;
 }
 
 .location {
@@ -185,6 +186,7 @@
 	display: none;
 }
 
+
 /* Overrides awesomplete CSS */
 .awesomplete {
 	font-size: 16px;
@@ -229,4 +231,73 @@
 
 .visually-hidden {
 	display: none;
+}
+
+
+
+
+/**
+ * Tooltip Styles https://chrisbracco.com/a-simple-css-tooltip/
+
+ */
+
+.copyme-btn {
+	margin-top: 50px;
+  display: inline-block;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 10px 10px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms,background 200ms;
+  background: transparent;
+  color: #000000;
+}  
+
+.copyme-btn:hover {
+      transform: translateY(-2px);
+  }           
+
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 110%;
+  padding: 3px;
+  background-color: #000;
+  min-width: 60px;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+
+/* Show tooltip content on hover */
+[data-tooltip].justclicked:before,
+ [data-tooltip].justclicked:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }

@@ -58,6 +58,32 @@ function startGame() {
 			minChars: 1
 		});
 
+		// Clipboard copy button
+		new ClipboardJS('.copyme-btn');
+		let copyButton = document.querySelector(".copyme-btn");
+
+		copyButton.addEventListener("click", function(target) {
+		  
+		    // Reveal the click tooltip
+		    copyButton.classList.add("justclicked");
+		    
+		    // .5 seconds later, hide the splash
+		    setTimeout(function(){
+		     copyButton.classList.remove("justclicked");
+		      
+		      // >> Set cookie to visited here <<
+		    }, 500); 
+		});
+
+
+
+
+
+
+
+
+
+
 		// Adds information at the overlay
 		let stadiumName = document.querySelector(".stadium-name");
 		let stadiumLocation = document.querySelector(".location");
@@ -181,6 +207,10 @@ function startGame() {
 				let hintArea = document.querySelector(".hint-container");
 				hintArea.classList.remove("gameon");
 				hintArea.classList.add("gameover");
+
+				let copyButton = document.querySelector(".copyme-btn");
+				let text = document.querySelector(".copyme").textContent;
+  				copyButton.setAttribute("data-clipboard-text", text); 
 
 			}
 

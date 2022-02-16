@@ -8,12 +8,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
 		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 		<script src="dependencies/awesomplete.js"></script>
-		<script src="dependencies/clipboard.min.js"></script>
+		<script src="dependencies/clipboard.js"></script>
 		<script src="script.js"></script>
+
 	</head>
 <body>
 
@@ -51,9 +53,12 @@
 				</div>
 
 				<div class="share">
-					<p class="explainer">copie e cole</p>
-					<div class="share-box">
-						<p class="share-string">já joguei estadi.ooo hoje, e tu? consegue acertar a cancha? <span class="score">⚽⚽⚽⚽⚽</span></p>
+<!-- 					<p class="explainer">copie e cole</p>
+ -->					<div class="share-box">
+						<p class="share-string"><span class="copyme">já joguei estadi.ooo hoje, e tu? consegue acertar a cancha? <span class="score">⚽⚽⚽⚽⚽</span></span></p>
+						
+						<button class="copyme-btn" data-tooltip="Copiado!" aria-label="Copiado!">copie y cole</button>
+
 					</div>
 				</div>
 
@@ -81,11 +86,11 @@
 			<div class="hint-container" class="gameon">
 				<p class="explainer">dicas</p>
 				<div class="text-container">
-				    <p class="hint revealed">Slide 1</p>
-				    <p class="hint concealed">Slide 2</p>
-				    <p class="hint concealed">Slide 3</p>
-				   	<p class="hint concealed">Slide 4</p>
-				   	<p class="hint concealed">Slide 5</p>
+				    <p class="hint revealed"></p>
+				    <p class="hint concealed"></p>
+				    <p class="hint concealed"></p>
+				   	<p class="hint concealed"></p>
+				   	<p class="hint concealed"></p>
 				</div>
 			</div>
 
