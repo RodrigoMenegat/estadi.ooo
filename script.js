@@ -37,8 +37,6 @@ function startGame() {
 		let image = document.querySelector(".stadium-image");
 		image.src = "img/" + todayStadium.arquivo;
 
-		console.log(todayStadium);
-
 		// Select the chances
 		let chances = document.querySelectorAll(".try");
 		console.log(chances);

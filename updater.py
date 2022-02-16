@@ -39,7 +39,7 @@ def clean_answer_options(game, answer_options):
 	answer_options = answer_options.estadios
 
 	series = pd.concat([correct_answers, answer_options])
-	series = series.sort_values().drop_duplicates().to_frame().rename({0:"estadios"})
+	series = series.sort_values().drop_duplicates().to_frame().rename(columns={0:"estadios"})
 
 	return series
 

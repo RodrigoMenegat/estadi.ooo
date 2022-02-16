@@ -10,6 +10,10 @@
 	max-width: 350px;
 }
 
+.awesomplete {
+	width: 150px;
+}
+
 .helper.help-inactive {
 	display: none;	
 }
