@@ -98,6 +98,15 @@
 	margin-bottom: 0;
 }
 
+.suggested-by {
+	margin: 0;
+	margin-top: 5px;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-transform: lowercase;
+}
+
 .share-string {
 	font-family: monospace;
 	font-size: 16px;

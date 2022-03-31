@@ -79,17 +79,14 @@ function startGame() {
 
 
 
-
-
-
-
-
 		// Adds information at the overlay
 		let stadiumName = document.querySelector(".stadium-name");
 		let stadiumLocation = document.querySelector(".location");
+		let suggestedBy = document.querySelector(".suggested-by");
 
 		stadiumName.textContent = todayStadium.nome;
 		stadiumLocation.textContent = todayStadium.cidade + ", " + todayStadium.estado;
+		suggestedBy.textContent = "sugerido por " + todayStadium.sugestao_de;
 
 		// Adding event listener
 		input.addEventListener("awesomplete-selectcomplete", function(event) {
